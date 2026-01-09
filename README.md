@@ -3,9 +3,15 @@
 
 Цель: построить production-процесс автоматического переобучения ML-модели при обнаружении data drift, автоматического выбора лучшей модели с PyCaret, регистрации в MLflow Registry и проверки через A/B тест.
 
+Структура репозитория
+- src/ — скрипты: get_data.py, mlflow_worker.py (PyCaret), drift_check.py
+- notebooks/ — первичный анализ инструментов
+
+
+
 Чек-лист для самопроверки
 - [ ] DAG сенсор корректно отслеживает drift и инициирует retrain только при превышении threshold
-- [ ] PyCaret: setup -> compare_models -> save_model автоматически
+- [x] PyCaret: setup -> compare_models -> save_model автоматически
 - [ ] Все эксперименты логируются в MLflow
 - [ ] Модель регистрируется в MLflow Registry с метриками и стадиями
 - [ ] Роутер корректно делит трафик и логирует версии
