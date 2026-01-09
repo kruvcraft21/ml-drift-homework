@@ -1,0 +1,15 @@
+apache-airflow==3.1.5
+apache-airflow-core==3.1.5
+apache-airflow-providers-common-compat==1.10.0
+apache-airflow-providers-common-io==1.7.0
+apache-airflow-providers-common-sql==1.30.0
+apache-airflow-providers-smtp==2.4.0
+apache-airflow-providers-standard==1.10.0
+apache-airflow-task-sdk==1.1.5
+pycaret==3.3.2
+mlflow==2.16.0
+mlflow-skinny==2.16.0
+mlflow-tracing==3.8.1
+fastapi==0.117.1
+fastapi-cli==0.0.16
+fastapi-cloud-cli==0.8.0
