@@ -1,8 +1,14 @@
+# Python 
 .venv/
 .env
 __pycache__/
 **/__pycache__/
 *.pyc
 *.pyo
+
+# Logs
 logs/
 logs.log
+
+# Config with api keys
+config/airflow.cfg
