@@ -48,8 +48,11 @@ def compute_psi_for_features(
 
 def main():
     # Создаем управляемый дрифт, чтобы посмотреть как это работает
-    train_df = get_dataset()
     os.environ['DRIFT_TYPE'] = 'mean_shift'
+    os.environ['DRIFT_MAGNITUDE'] = '50.0'
+    train_df = get_dataset()
+    os.environ['DRIFT_TYPE'] = 'none'
+    # os.environ['DRIFT_MAGNITUDE'] = '50.0'
     test_df = get_dataset()
 
     features = train_df.drop("target", axis=1).columns.to_list()

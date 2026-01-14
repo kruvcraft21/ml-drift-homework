@@ -339,10 +339,6 @@ services:
     image: ghcr.io/mlflow/mlflow:latest
     ports:
       - 5000:5000
-    # volumes:
-    #   - "./mlruns:/mlflow/mlruns:z"
-    #   - "./mlflow_db:/mlflow_db:z"
-    # command: mlflow server --backend-store-uri sqlite:///mlflow_db/mlflow.db --artifacts-destination ./mlflow/mlruns --host 0.0.0.0 --allowed-hosts "*"
     command: mlflow server --host 0.0.0.0 --allowed-hosts "*"
 
 volumes:

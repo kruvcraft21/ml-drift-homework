@@ -17,7 +17,7 @@ def generate_data() -> tuple[pd.DataFrame, np.ndarray]:
     
     :rtype: tuple[DataFrame, ndarray]
     """
-    data = make_classification(n_samples=10000, n_informative=5, n_classes=3, random_state=0)
+    data = make_classification(n_samples=10000, n_features=10, n_informative=5, n_classes=3, random_state=0)
     return pd.DataFrame(data[0], columns=[f"f{n}" for n in range(data[0].shape[1])]), data[1]
 
 def get_dataset() -> pd.DataFrame:
@@ -36,7 +36,7 @@ def get_dataset() -> pd.DataFrame:
         
     if drift_type == 'mean_shift':
         # аддитивный шум пропорционально std признака
-        noise = rng.normal(loc=magnitude, scale=0.1 * magnitude, size=data.shape) * data.std(axis=0).to_numpy()
+        noise = rng.normal(loc=0, scale=0.1 * magnitude, size=data.shape) * data.std(axis=0).to_numpy()
         data = data + noise
 
     elif drift_type == 'scale':
