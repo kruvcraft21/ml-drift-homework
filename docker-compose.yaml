@@ -348,7 +348,7 @@ services:
     ports:
       - 8000:8000
     volumes:
-      - .logs:/app/logs
+      - ./logs:/app/logs
     command: ["fastapi", "dev", "--host", "0.0.0.0", "."]
 
 volumes:
