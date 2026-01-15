@@ -340,6 +340,16 @@ services:
     ports:
       - 5000:5000
     command: mlflow server --host 0.0.0.0 --allowed-hosts "*"
+  
+  api_router:
+    build: ./app/
+    environment:
+      MLFLOW_ENDPOINT: http://mlflow:5000
+    ports:
+      - 8000:8000
+    volumes:
+      - .logs:/app/logs
+    command: ["fastapi", "dev", "--host", "0.0.0.0", "."]
 
 volumes:
   postgres-db-volume:
