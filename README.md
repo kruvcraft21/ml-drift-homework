@@ -49,7 +49,7 @@
 
 1. Клонировать репозиторий и установить зависимости:
    ```bash
-   git clone https://github.com/<user>/mldrift.git
+   git clone https://github.com/kruvcraft21/mldrift.git
    cd mldrift
    python -m venv .venv
    source .venv/bin/activate  # Windows: .venv\Scripts\activate
